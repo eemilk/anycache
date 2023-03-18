@@ -1,3 +1,3 @@
-# AnyCache
+# AnyCache swift package
 
-A description of this package.
+Simple service to create caches of any type
