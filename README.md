@@ -1,3 +1,3 @@
-# AnyCache
+# AnyCache Swift package
 
-A description of this package.
+In Swift generic service to create caches of different type
