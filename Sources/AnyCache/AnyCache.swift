@@ -40,7 +40,7 @@ public protocol AnyCacheInterface {
 
 
 /// Generic cache which can be declared with a specificf type to hold cache value of that type.
-final class AnyCache<T: Codable>: AnyCacheInterface {
+public final class AnyCache<T: Codable>: AnyCacheInterface {
 
     private let varyingCacheDirectory: URL?
     private let fileManager: FileManager = .default
