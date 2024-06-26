@@ -45,7 +45,7 @@ public final class AnyCache<T: Codable>: AnyCacheInterface {
     private let varyingCacheDirectory: URL?
     private let fileManager: FileManager = .default
     /// cacheName is declared on init to differentiate caches from each other which are used with this generic
-    let cacheName: String
+    public let cacheName: String
 
     public init(cacheName: String) {
         self.cacheName = cacheName
@@ -73,7 +73,7 @@ public final class AnyCache<T: Codable>: AnyCacheInterface {
 
     }
 
-    func setEntry(_ value: T, for key: String) {
+    public func setEntry(_ value: T, for key: String) {
         guard let varyingCacheDirectory = varyingCacheDirectory else { return }
 
         let url = varyingCacheDirectory.appendingPathComponent(key)
@@ -85,7 +85,7 @@ public final class AnyCache<T: Codable>: AnyCacheInterface {
         }
     }
 
-    func getEntry(for key: String) -> T? {
+    public func getEntry(for key: String) -> T? {
         guard let varyingCacheDirectory = varyingCacheDirectory else { return nil }
 
         let url = varyingCacheDirectory.appendingPathComponent(key)
@@ -98,7 +98,7 @@ public final class AnyCache<T: Codable>: AnyCacheInterface {
         }
     }
 
-    func getAllEntries() -> [T]? {
+    public func getAllEntries() -> [T]? {
         guard let varyingCacheDirectory = varyingCacheDirectory else { return nil }
 
         do {
@@ -116,7 +116,7 @@ public final class AnyCache<T: Codable>: AnyCacheInterface {
         }
     }
 
-    func removeEntry(for key: String) {
+    public func removeEntry(for key: String) {
         guard let varyingCacheDirectory = varyingCacheDirectory else { return }
 
         let url = varyingCacheDirectory.appendingPathComponent(key)
@@ -127,7 +127,7 @@ public final class AnyCache<T: Codable>: AnyCacheInterface {
         }
     }
 
-    func removeAllEntries() {
+    public func removeAllEntries() {
         guard let varyingCacheDirectory = varyingCacheDirectory else { return }
 
         do {
@@ -140,7 +140,7 @@ public final class AnyCache<T: Codable>: AnyCacheInterface {
         }
     }
 
-    func entryExists(for key: String) -> Bool {
+    public func entryExists(for key: String) -> Bool {
         guard let varyingCacheDirectory = varyingCacheDirectory else { return false }
 
         let url = varyingCacheDirectory.appendingPathComponent(key)
