@@ -47,7 +47,7 @@ public final class AnyCache<T: Codable>: AnyCacheInterface {
     /// cacheName is declared on init to differentiate caches from each other which are used with this generic
     let cacheName: String
 
-    init(cacheName: String) {
+    public init(cacheName: String) {
         self.cacheName = cacheName
 
         let cacheDirectory: URL? = fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first
